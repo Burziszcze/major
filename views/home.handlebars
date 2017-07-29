@@ -1,0 +1,154 @@
+<!-- flash messages -->
+
+{{#if messages.success}}
+  <div class="text-success">
+    {{#each messages.success}}
+      <div>{{msg}}</div>
+    {{/each}}
+  </div>
+{{/if}}
+{{#if messages.error}}
+  <div class="text-danger">
+    {{#each messages.error}}
+      <div>{{msg}}</div>
+    {{/each}}
+  </div>
+{{/if}}
+{{#if messages.info}}
+  <div class="text-info">
+    {{#each messages.info}}
+      <div>{{msg}}</div>
+    {{/each}}
+  </div>
+{{/if}}
+
+<div class="section no-pad-bot teal lighten-5" id="index-banner">
+  <div class="container">
+    <h1 class="header center">Jakub Cebrykow</h1>
+    <div class="row center">
+      <h4 class="header col s12 light">Twoj kandydat na burmistrza</h4>
+      <h5 class="header col s12 light">gminy Szczebrzeszyn</h5>
+    </div>
+    <div class="row center">
+      <a href="#contact" class="btn btn-large waves-effect waves-light red">Wyraź poparcie!</a>
+    </div>
+  </div>
+</div>
+<!-- about -->
+<div class="section about grey lighten-5">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m6 right">
+        <h3><i class="mdi-content-send brown-text"></i>...</h3>
+        <h4>Parę słów o mnie</h4>
+        <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra
+          ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices
+          erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+      </div>
+      <div class="col s12 m6 left ">
+        <img src="images/img_4.JPG" alt="self-photo" class="kuba-self responsive-img z-depth-2" width="350" height="450">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- parallax -->
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h2 class="header center black-text text-lighten-2">Gmina Szczebrzeszyn</h2>
+      <div class="row center">
+        <h5 class="header col s12 black-text light">Potrzebuje zmian, wyraź swoją opinię!</h5>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+  <div class="parallax"><img src="images/szczebrzeszyn-background.jpg" alt="Szczebrzeszyn background" style="display: block; transform: translate3d(-50%, 201px, 0px); opacity: 0.7;"></div>
+</div>
+
+<div class="section homegrids">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center"><i class="fa fa-bolt" aria-hidden="true"></i></h2>
+          <h5 class="center">Zadbaj o swoją przyszłość!</h5>
+          <p class="light">Lorem ipsum dolor sit amet, tota argumentum ne vel. Eu vero sadipscing delicatissimi sit, ei pro sale nobis, ullum offendit recusabo eu has. His et illum laudem mucius. Et falli interesset ius. Alii saepe laoreet ut eos, quas platonem id vel.
+            Mei saepe partiendo ne.</p>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center"><i class="fa fa-line-chart" aria-hidden="true"></i></h2>
+          <h5 class="center">To miasto zasługuje na więcej!</h5>
+
+          <p class="light">Et vim eius iisque dignissim. Persius albucius consulatu id eam, elitr nostro necessitatibus no est, nibh oblique delicata an quo. Vis ut summo legere constituam, eu mel percipit salutatus, aeterno dissentiunt in per. Fuisset imperdiet est ei.
+            His id melius delicata, usu modo diceret electram no. Partem partiendo pro te, nisl alia admodum an eos.</p>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center"><i class="fa fa-cog" aria-hidden="true"></i></h2>
+          <h5 class="center">Czas na zmiany!</h5>
+          <p class="light">Te pericula explicari appellantur pro, vim in augue fierent dissentiunt. Ei nam sint mandamus pericula, vel et ponderum temporibus, possim labores nominati cu mel. Ei inermis honestatis vel, ex explicari tincidunt quo, quis constituto ut his.
+            Mei accumsan senserit no, minim accommodare qui ne, id sea solum detracto.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- contact form -->
+<div id="contact" class="section contact grey lighten-5">
+  <div class="container">
+    <div class="row center">
+      <h2>Poprzyj mnie!</h2>
+      <h4>wypełnij formularz i złóż deklaracje poparcia!</h4>
+    </div>
+    <div class="row">
+      <form class="col s12" action="/vote" method="post">
+        <div class="row">
+          <div class="input-field col s12">
+            <input p id="firstname" type="text" class="validate" name="firstname" required="">
+            <label for="firstname">Imię</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="lastname" type="text" class="validate" name="lastname" required="">
+            <label for="lastname">Nazwisko</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="email" type="email" class="validate" name="email" required="">
+            <label for="email">Email</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="place" type="text" class="validate" name="place" required="">
+            <label for="place">Miejscowość</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="message" class="materialize-textarea" name="message" length="120" required=""></textarea>
+            <label for="message">Co byś chciał zmienić w naszej gminie?</label>
+          </div>
+        </div>
+        <div class="row right">
+          <div class="col s12">
+            <button class="btn waves-effect waves-light red" type="submit" name="action"><i class="fa fa-paper-plane right" aria-hidden="true"></i>Wyślij
+              </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- scroll up button -->
+<div class="fixed-action-btn scrollTop" role="button">
+  <a class="btn-floating btn-large waves-effect waves-light grey darken-4"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+</div>
+
+<!-- google map -->
+<div class="section map">
+  <iframe width="100%" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d228702.1889057831!2d22.769212372107635!3d50.70461205549251!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472340f13c1efd19%3A0x4fe719b661bf45ba!2sSzczebrzeszyn%2C+Poland!5e0!3m2!1sen!2spl!4v1494942240180"
+    width="600" height="350" frameborder="0" allowfullscreen>
+  </iframe>
+</div>
