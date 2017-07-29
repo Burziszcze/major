@@ -19,7 +19,6 @@ coverage
 
 # Dependency directory
 node_modules
-bower_components
 
 # Editors
 .idea
