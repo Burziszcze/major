@@ -1,46 +1,55 @@
-<div class="container">
-  {{#if messages.error}}
-    <div class="text-danger">
-      {{#each messages.error}}
-        <div>{{msg}}</div>
-      {{/each}}
-    </div>
-  {{/if}}
-  <!-- <form method="POST">
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" placeholder="Email" autofocus>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" placeholder="Password">
-    <p><a href="/forgot">Forgot your password?</a></p>
-    <button class="waves-effect waves-light btn" type="submit">Zaloguj się</button>
-  </form> -->
-  <br>
-<div class="container">
-  <form class="loginform z-depth-4" method="POST">
-    <div class="section login center">
-      <i class="fa fa-user loginformusericon" aria-hidden="true"></i>
-      <h4 class="center">Zaloguj się!</h4>
-      <div class="row">
-        <div class="input-field col s12">
-          <input type="email" name="email" id="email" placeholder="Email" autofocus>
-          <label for="last_name">Email</label>
-        </div>
-        <div class="input-field col s12">
-          <input type="password" name="password" id="password" placeholder="Password">
-          <label for="last_name">Hasło</label>
-        </div>
-        <p class="center"><a href="/forgot">Zapomniane hasło?</a></p>
-        <button class="waves-effect waves-light btn red" type="submit">Zaloguj się</button>
+<div class="section logincontainer">
+  <div class="container">
+    {{#if messages.error}}
+      <div class="text-danger light">
+        {{#each messages.error}}
+          <div>{{msg}}</div>
+        {{/each}}
       </div>
+    {{/if}}
+    <!-- <form method="POST">
+  <label for="email">Email</label>
+  <input type="email" name="email" id="email" placeholder="Email" autofocus>
+  <label for="password">Password</label>
+  <input type="password" name="password" id="password" placeholder="Password">
+  <p><a href="/forgot">Forgot your password?</a></p>
+  <button class="waves-effect waves-light btn" type="submit">Zaloguj się</button>
+</form> -->
+    <br>
+    <div class="row">
+      <div class="col s12 m6 offset-m3 center">
+        <form class="loginform z-depth-4 center" method="POST">
+          <br>
+          <i class="fa fa-user-o loginformusericon" aria-hidden="true"></i>
+          <h4 class="header col s12 light">Zaloguj się!</h4>
+          <div class="row">
+            <div class="input-field col s12">
+              <input type="email" name="email" id="email" autofocus required="">
+              <label for="email">Email</label>
+            </div>
+            <div class="input-field col s12">
+              <input type="password" name="password" id="password" required="">
+              <label for="password">Hasło</label>
+            </div>
+
+            <p class="center"><a href="/forgot">Zapomniane hasło?</a></p>
+            <button class="waves-effect waves-light btn red" type="submit">Zaloguj się</button>
+          </div>
+          <br>
+          <!-- </div> -->
+        </form>
+        <br>
+        <hr>
+        <br>
+        <i class="fa fa-facebook-official" aria-hidden="true"></i>
+        <a href="/auth/facebook">zaloguj się przez Facebook</a>
+        <br>
+        <i class="fa fa-google" aria-hidden="true"></i>
+        <a href="/auth/google">zaloguj się przez Google</a>
+        <br>
+        <p>Nie posiadasz jeszcze konta? <a href="/signup">Zarejestruj się</a></p>
+      </div>
+      <br>
     </div>
-  </form>
-</div>
-
-  <br>
-  <a href="/auth/facebook">Sign in with Facebook</a>
-  <br>
-  <a href="/auth/google">Sign in with Google</a>
-  <br>
-
-  <p>Don't have an account? <a href="/signup">Sign up</a></p>
+  </div>
 </div>

@@ -193,7 +193,7 @@ exports.unlink = function(req, res, next) {
         break;
       case 'github':
           user.github = undefined;
-        break;      
+        break;
       default:
         req.flash('error', { msg: 'Invalid OAuth Provider' });
         return res.redirect('/account');
@@ -221,8 +221,8 @@ exports.forgotGet = function(req, res) {
  * POST /forgot
  */
 exports.forgotPost = function(req, res, next) {
-  req.assert('email', 'Email is not valid').isEmail();
-  req.assert('email', 'Email cannot be blank').notEmpty();
+  req.assert('email', 'Email jest niepoprawny!').isEmail();
+  req.assert('email', 'Pole Email nie może być puste!').notEmpty();
   req.sanitize('email').normalizeEmail({ remove_dots: false });
 
   var errors = req.validationErrors();
@@ -242,7 +242,7 @@ exports.forgotPost = function(req, res, next) {
     function(token, done) {
       User.findOne({ email: req.body.email }, function(err, user) {
         if (!user) {
-          req.flash('error', { msg: 'The email address ' + req.body.email + ' is not associated with any account.' });
+          req.flash('error', { msg: 'Ten adres Email ' + req.body.email + ' nie jest połączony z żadnym kontem.' });
           return res.redirect('/forgot');
         }
         user.passwordResetToken = token;
@@ -301,8 +301,8 @@ exports.resetGet = function(req, res) {
  * POST /reset
  */
 exports.resetPost = function(req, res, next) {
-  req.assert('password', 'Password must be at least 4 characters long').len(4);
-  req.assert('confirm', 'Passwords must match').equals(req.body.password);
+  req.assert('password', 'Hasło musi zawierać więcej niż 4 znaki!').len(4);
+  req.assert('confirm', 'Hasła muszą się zgadzać!').equals(req.body.password);
 
   var errors = req.validationErrors();
 

@@ -1,19 +1,20 @@
-<div class="container">
-  {{#if messages.success}}
-    <div class="text-success">
-      {{#each messages.success}}
-        <div>{{msg}}</div>
-      {{/each}}
-    </div>
-  {{/if}}
-  {{#if messages.error}}
-    <div class="text-danger">
-      {{#each messages.error}}
-        <div>{{msg}}</div>
-      {{/each}}
-    </div>
-  {{/if}}
-  <!-- <form class="col s12 center" method="POST">
+<div class="section contactform">
+  <div class="container">
+    {{#if messages.success}}
+      <div class="text-success light">
+        {{#each messages.success}}
+          <div>{{msg}}</div>
+        {{/each}}
+      </div>
+    {{/if}}
+    {{#if messages.error}}
+      <div class="text-danger light">
+        {{#each messages.error}}
+          <div>{{msg}}</div>
+        {{/each}}
+      </div>
+    {{/if}}
+    <!-- <form class="col s12 center" method="POST">
     <label for="name">Name</label>
     <input type="text" name="name" id="name" autofocus>
     <label for="email">Email</label>
@@ -24,27 +25,37 @@
     <button class="waves-effect waves-light btn red" type="submit">Wyślij</button>
   </form>
   <br> -->
-  <h3 class="center">Formularz kontaktowy</h3>
-  <form class="col s12" method="POST">
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="name" type="text" class="validate">
-        <label for="name">Imię</label>
-      </div>
+    <div class="contactformtext center">
+      <i class="fa fa-envelope-o contactformicon" aria-hidden="true"></i>
+      <!-- <h5>Formularz kontaktowy</h5>
+      <h6>Skontaktuj się ze mną prywatnie</h6> -->
+      <h4 class="header col s12 light">Formularz kontaktowy</h4>
+      <h5 class="header col s12 light">Skontaktuj się ze mną prywatnie</h5>
     </div>
     <div class="row">
-      <div class="input-field col s12">
-        <input id="email" type="email" class="validate">
-        <label for="email">Email</label>
+      <div class="col s12 center">
+        <form class="col s12" method="POST">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="name" type="text" class="validate" required="">
+              <label for="name">Imię</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="email" type="email" class="validate" required="">
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="messgae" type="text" class="validate" required="">
+              <label for="message">Wiadomość</label>
+            </div>
+          </div>
+          <button class="waves-effect waves-light btn red btn-large" type="submit"><i class="fa fa-paper-plane right" aria-hidden="true"></i>Wyślij</button>
+        </form>
       </div>
     </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="messgae" type="text" class="validate">
-        <label for="message">Wiadomość</label>
-      </div>
-    </div>
-    <button class="waves-effect waves-light btn red" type="submit">Wyślij</button>
-  </form>
-  <br>
+  </div>
 </div>

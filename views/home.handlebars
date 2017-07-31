@@ -1,21 +1,21 @@
 <!-- flash messages -->
 
 {{#if messages.success}}
-  <div class="text-success">
+  <div class="text-success light">
     {{#each messages.success}}
       <div>{{msg}}</div>
     {{/each}}
   </div>
 {{/if}}
 {{#if messages.error}}
-  <div class="text-danger">
+  <div class="text-danger light">
     {{#each messages.error}}
       <div>{{msg}}</div>
     {{/each}}
   </div>
 {{/if}}
 {{#if messages.info}}
-  <div class="text-info">
+  <div class="text-info light">
     {{#each messages.info}}
       <div>{{msg}}</div>
     {{/each}}

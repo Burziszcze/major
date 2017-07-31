@@ -1,31 +1,49 @@
-<div class="container">
-  {{#if messages.error}}
-    <div class="text-danger">
-      {{#each messages.error}}
-        <div>{{msg}}</div>
-      {{/each}}
+<div class="section signupcontainer">
+  <div class="container">
+    {{#if messages.error}}
+      <div class="text-danger light">
+        {{#each messages.error}}
+          <div>{{msg}}</div>
+        {{/each}}
+      </div>
+    {{/if}}
+    <br>
+    <div class="row">
+      <div class="col s12 m6 offset-m3 center">
+        <form class="signupform z-depth-4 center" method="POST">
+          <br>
+          <i class="fa fa-user-plus signupicon" aria-hidden="true"></i>
+          <h4 class="header col s12 light">Utwórz nowe konto!</h4>
+          <div class="row">
+            <div class="input-field col s12">
+              <input type="text" name="name" id="name" autofocus required="">
+              <label for="name">Imię</label>
+            </div>
+            <div class="input-field col s12">
+              <input type="email" name="email" id="email" autofocus required="">
+              <label for="email">Email</label>
+            </div>
+            <div class="input-field col s12">
+              <input type="password" name="password" id="password" required="">
+              <label for="password">Hasło</label>
+            </div>
+            <button class="waves-effect waves-light btn red" type="submit">Zarejestruj się</button>
+          </div>
+          <br>
+          <!-- </div> -->
+        </form>
+        <br>
+        <hr>
+        <i class="fa fa-facebook-official" aria-hidden="true"></i>
+        <a href="/auth/facebook">Zarejestruj konto przez Facebook</a>
+        <br>
+        <i class="fa fa-google" aria-hidden="true"></i>
+        <a href="/auth/google">Zarejestruj konto przez Google</a>
+        <br>
+
+        <p>Posiadasz już konto? <a href="/login">Zaloguj się</a></p>
+      </div>
+      <br>
     </div>
-  {{/if}}
-
-  <h4 class="center">Utwórz konto</h4>
-
-  <form method="POST">
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" placeholder="Email" autofocus>
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name" placeholder="Name">
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" placeholder="Password">
-    <p>By signing up, you agree to the <a href="/">Terms of Service</a>.</p>
-    <button class="waves-effect waves-light btn red" type="submit">Stwórz konto</button>
-  </form>
-
-  <hr>
-
-  <a href="/auth/facebook">Sign in with Facebook</a>
-  <br>
-  <a href="/auth/google">Sign in with Google</a>
-  <br>
-
-  <p>Already have an account? <a href="/login">Log in</a></p>
+  </div>
 </div>
