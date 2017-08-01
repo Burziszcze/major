@@ -9,6 +9,25 @@
 }
 
 
+@media (max-width: 412px) {
+  .emblem {
+    width: 40px;
+    height: 45px;
+    margin-left: 0px;
+
+  }
+}
+
+@media (max-width: 412px) {
+  #logo-container {
+    /*margin-left: 30px;*/
+    font-size: 22px;
+    padding: 0;
+    margin-right: 0;
+  }
+}
+
+
 /*Google Map*/
 
 .map {
@@ -57,6 +76,21 @@ nav {
   font-size: 25px;
 }
 
+
+/*grids fonts*/
+
+.fa-bolt {
+  font-size: 70px;
+}
+
+.fa-line-chart {
+  font-size: 70px;
+}
+
+.fa-cog {
+  font-size: 70px;
+}
+
 .fa-google {
   color: #4285f4;
 }
@@ -92,7 +126,6 @@ nav {
   text-align: center;
   font-size: 25px;
   background-color: #212121;
-
 }
 
 .text-danger {
@@ -100,8 +133,6 @@ nav {
   text-align: center;
   font-size: 25px;
   background-color: #212121;
-
-
 }
 
 .text-info {
@@ -109,7 +140,6 @@ nav {
   text-align: center;
   font-size: 25px;
   background-color: #212121;
-
 }
 
 .loginform {

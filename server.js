@@ -107,6 +107,8 @@ app.get('/auth/google/callback', passport.authenticate('google', {
 app.post('/vote', voteController.followerscout);
 // Display number of followers in view
 app.get('/', voteController.displayFollowers);
+// Show followersPage after logged in
+// app.get('/followerspage', userController.getFollowers);
 
 // Production error handler
 if (app.get('env') === 'production') {

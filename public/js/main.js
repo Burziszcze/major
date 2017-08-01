@@ -7,7 +7,9 @@ $(document).ready(function() {
   // dropdown button
   $(".dropdown-button").dropdown();
   // button collapse
-  $('.button-collapse').sideNav();
+  $('.button-collapse').sideNav({
+    edge: 'left',
+  });
   // carousel
   $('.carousel.carousel-slider').carousel({
     fullWidth: true

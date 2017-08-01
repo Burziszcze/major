@@ -27,6 +27,13 @@ exports.loginGet = function(req, res) {
   });
 };
 
+// GET FOLLOWERS PAGE AFTER LOGIN
+// exports.followersGet = function(req,res) {
+//   if (req.user) {
+//     return res.redirect('/followerspage');
+//   }
+// };
+
 /**
  * POST /login
  */
