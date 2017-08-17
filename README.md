@@ -1,8 +1,16 @@
 ### Aplikacja kandydata na burmistrza Jakub Cebrykow ###
 
+
 # Zawiera:
 
-- ES6 (Node 6.0) baseline
+- ES5 (Node 8.1.4)
+- NPM 5.0.0
 - Express 4.x
-- Materialize CSS
+- MongoDB
+- Materialize CSS front-end framework
 - NodeMailer
+- Passport.js authentication
+
+# link do wersji demo 1.0.0
+
+https://burmistrz.herokuapp.com/
