@@ -17,15 +17,23 @@ passport.deserializeUser(function(id, done) {
 });
 
 // Sign in with Email and Password
-passport.use(new LocalStrategy({ usernameField: 'email' }, function(email, password, done) {
-  User.findOne({ email: email }, function(err, user) {
+passport.use(new LocalStrategy({
+  usernameField: 'email'
+}, function(email, password, done) {
+  User.findOne({
+    email: email
+  }, function(err, user) {
     if (!user) {
-      return done(null, false, { msg: 'The email address ' + email + ' is not associated with any account. ' +
-      'Double-check your email address and try again.' });
+      return done(null, false, {
+        msg: 'Twój adres email  ' + email + ' nie jest powiązany z żadnym kontem. ' +
+          'Sprawdź dokładnie swój adres email i spróbuj ponownie.'
+      });
     }
     user.comparePassword(password, function(err, isMatch) {
       if (!isMatch) {
-        return done(null, false, { msg: 'Invalid email or password' });
+        return done(null, false, {
+          msg: 'Niewłaściwy email lub hasło'
+        });
       }
       return done(null, user);
     });
@@ -41,9 +49,13 @@ passport.use(new FacebookStrategy({
   passReqToCallback: true
 }, function(req, accessToken, refreshToken, profile, done) {
   if (req.user) {
-    User.findOne({ facebook: profile.id }, function(err, user) {
+    User.findOne({
+      facebook: profile.id
+    }, function(err, user) {
       if (user) {
-        req.flash('error', { msg: 'There is already an existing account linked with Facebook that belongs to you.' });
+        req.flash('error', {
+          msg: 'Istnieje już istniejące konto połączone z Facebookem, które należy do Ciebie.'
+        });
         done(err);
       } else {
         User.findById(req.user.id, function(err, user) {
@@ -52,20 +64,28 @@ passport.use(new FacebookStrategy({
           user.picture = user.picture || 'https://graph.facebook.com/' + profile.id + '/picture?type=large';
           user.facebook = profile.id;
           user.save(function(err) {
-            req.flash('success', { msg: 'Your Facebook account has been linked.' });
+            req.flash('success', {
+              msg: 'Twoje konto Facebook zostało powiązane.'
+            });
             done(err, user);
           });
         });
       }
     });
   } else {
-    User.findOne({ facebook: profile.id }, function(err, user) {
+    User.findOne({
+      facebook: profile.id
+    }, function(err, user) {
       if (user) {
         return done(err, user);
       }
-      User.findOne({ email: profile._json.email }, function(err, user) {
+      User.findOne({
+        email: profile._json.email
+      }, function(err, user) {
         if (user) {
-          req.flash('error', { msg: user.email + ' is already associated with another account.' });
+          req.flash('error', {
+            msg: 'Adres ' + user.email + 'jest już powiązany z innym kontem.'
+          });
           done(err);
         } else {
           var newUser = new User({
@@ -93,9 +113,13 @@ passport.use(new GoogleStrategy({
   passReqToCallback: true
 }, function(req, accessToken, refreshToken, profile, done) {
   if (req.user) {
-    User.findOne({ google: profile.id }, function(err, user) {
+    User.findOne({
+      google: profile.id
+    }, function(err, user) {
       if (user) {
-        req.flash('error', { msg: 'There is already an existing account linked with Google that belongs to you.' });
+        req.flash('error', {
+          msg: 'There is already an existing account linked with Google that belongs to you.'
+        });
       } else {
         User.findById(req.user.id, function(err, user) {
           user.name = user.name || profile.displayName;
@@ -103,20 +127,28 @@ passport.use(new GoogleStrategy({
           user.picture = user.picture || profile._json.image.url;
           user.google = profile.id;
           user.save(function(err) {
-            req.flash('success', { msg: 'Your Google account has been linked.' });
+            req.flash('success', {
+              msg: 'Your Google account has been linked.'
+            });
             done(err, user);
           });
         });
       }
     });
   } else {
-    User.findOne({ google: profile.id }, function(err, user) {
+    User.findOne({
+      google: profile.id
+    }, function(err, user) {
       if (user) {
         return done(null, user);
       }
-      User.findOne({ email: profile.emails[0].value }, function(err, user) {
+      User.findOne({
+        email: profile.emails[0].value
+      }, function(err, user) {
         if (user) {
-          req.flash('error', { msg: user.email + ' is already associated with another account.' });
+          req.flash('error', {
+            msg: user.email + ' is already associated with another account.'
+          });
           done(err);
         } else {
           var newUser = new User({

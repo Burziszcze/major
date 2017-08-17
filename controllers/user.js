@@ -100,9 +100,10 @@ exports.signupPost = function(req, res, next) {
 
   User.findOne({ email: req.body.email }, function(err, user) {
     if (user) {
-      req.flash('error', { msg: 'The email address you have entered is already associated with another account.' });
+      req.flash('error', { msg: 'Podany przez Ciebie adres E-mail jest aktualnie powiązany z innym kontem.' });
       return res.redirect('/signup');
     }
+
     user = new User({
       name: req.body.name,
       email: req.body.email,
@@ -158,11 +159,11 @@ exports.accountPut = function(req, res, next) {
     }
     user.save(function(err) {
       if ('password' in req.body) {
-        req.flash('success', { msg: 'Your password has been changed.' });
+        req.flash('success', { msg: 'Twoje hasło zostało zmienione.' });
       } else if (err && err.code === 11000) {
-        req.flash('error', { msg: 'The email address you have entered is already associated with another account.' });
+        req.flash('error', { msg: 'Podany przez Ciebie adres email jest aktualnie powiązany z innym kontem.' });
       } else {
-        req.flash('success', { msg: 'Your profile information has been updated.' });
+        req.flash('success', { msg: 'Twoj profil został zaktualizowany.' });
       }
       res.redirect('/account');
     });
@@ -175,7 +176,7 @@ exports.accountPut = function(req, res, next) {
 exports.accountDelete = function(req, res, next) {
   User.remove({ _id: req.user.id }, function(err) {
     req.logout();
-    req.flash('info', { msg: 'Your account has been permanently deleted.' });
+    req.flash('info', { msg: 'Twoje konto zostało trwale usunięte!' });
     res.redirect('/');
   });
 };
@@ -206,7 +207,7 @@ exports.unlink = function(req, res, next) {
         return res.redirect('/account');
     }
     user.save(function(err) {
-      req.flash('success', { msg: 'Your account has been unlinked.' });
+      req.flash('success', { msg: 'Twoje konto zostało odłączone.' });
       res.redirect('/account');
     });
   });
@@ -353,7 +354,7 @@ exports.resetPost = function(req, res, next) {
         'This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n'
       };
       transporter.sendMail(mailOptions, function(err) {
-        req.flash('success', { msg: 'Your password has been changed successfully.' });
+        req.flash('success', { msg: 'Twoje hasło zostało zmienione.' });
         res.redirect('/account');
       });
     }
