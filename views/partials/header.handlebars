@@ -31,15 +31,14 @@
     <div class="nav-wrapper container">
       <img class="emblem responsive-img" src="images/szczebrzeszyn-emblem.png" alt="szczebrzeszyn-emblem">
       <a id="logo-container" href="/" class="brand-logo">Jakub Cebrykow</a>
-      <!-- <ul class="right hide-on-med-and-down">
-         <li><a href="#!">Poparło mnie już: <span class="badge indigo white-text">1 000 000 osób</span></a></li>
-         <li><a href="/login"><i class="fa fa-user" style="font-size: 35px;" aria-hidden="true"></i></a></li>
-       </ul> -->
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="#!">Poparło mnie już:<span class="badge indigo white-text">{{count}}</span></a></li>
         <li><a href="/">Główna</a></li>
         <li><a href="/contact">Kontakt</a></li>
+        {{#if user.name}}
+        {{else}}
         <li><a href="/login">Zaloguj</a></li>
+        {{/if}}
       </ul>
     </div>
   </nav>
@@ -48,13 +47,12 @@
 <ul id="slide-out" class="side-nav right">
   <li>
     <div class="user-view">
-      <li><a href="#!">Poparło mnie już:<span class="badge indigo white-text">{{count}}</span></a></li>
+      <li><a href="#!">Poparło mnie już:<span class="badge indigo white-text"></span></a></li>
       <li>
         <div class="divider"></div>
       </li>
       {{#if user}}
         {{#if user.picture}}
-          <!-- <img class="avatar responsive-img circle" width="50" height="50" src="{{user.picture}}"> -->
           <span> <a href="#!user"><img class="avatar responsive-img circle" src="{{user.picture}}"></a></span>
         {{else}}
 
@@ -77,11 +75,8 @@
       {{/if}}
     </div>
   </li>
-  <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-  <li><a href="#!">Second Link</a></li>
+  <li><a href="#!"><i class="fa fa-envelope-o" aria-hidden="true"></i>Kontakt</a></li>
   <li>
     <div class="divider"></div>
   </li>
-  <li><a class="subheader">Subheader</a></li>
-  <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
 </ul>
