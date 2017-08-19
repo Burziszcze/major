@@ -1,6 +1,3 @@
-*.env
-.env
-
 lib-cov
 *.seed
 *.log
@@ -17,9 +14,12 @@ results
 tmp
 coverage
 
+# API keys
+.env
 
 # Dependency directory
 node_modules
+bower_components
 
 # Editors
 .idea

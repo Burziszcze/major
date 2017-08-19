@@ -1,16 +1,18 @@
-### Aplikacja kandydata na burmistrza Jakub Cebrykow ###
+### Application of the candidate for the mayor of the municipality of Szczebrzeszyn - Jakub Cebrykow ###
 
-
-# Zawiera:
+# Included:
 
 - ES5 (Node 8.1.4)
 - NPM 5.0.0
-- Express 4.x
+- Express.js 4.x
 - MongoDB
 - Materialize CSS front-end framework
 - NodeMailer
 - Passport.js authentication
 
-# link do wersji demo 1.0.0
+# demo version 1.0.0
 
-https://burmistrz.herokuapp.com/
+- link: https://burmistrz.herokuapp.com/
+
+# based on the Hackathon Starter - Node.js boilerplate
+- link: https://github.com/sahat/hackathon-starter

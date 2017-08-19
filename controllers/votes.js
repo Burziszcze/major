@@ -15,7 +15,7 @@ exports.followerscout = function(req, res) {
 
   if (errors) {
     req.flash('error', {
-      msg: 'Coś się spierdoliło i twój wyraz poparcia jest chuja warty xd'
+      msg: 'Ups! coś poszło nie tak i twój wyraz poparcia nie powędrował do bazy, spróbuj ponownie!'
     });
     return res.redirect('/');
   } else {
@@ -28,12 +28,14 @@ exports.followerscout = function(req, res) {
 
 // count number of collection
 
-exports.displayFollowers = function(req, res) {
-}
+exports.displayFollowers = function(req, res) {}
 
-followers.count({}).exec().then(function(count) {
-  //tutaj wszystko nakurwiasz
-  console.log("Followers number is: " + count);
-}).catch(function(err) {
-  console.log('wyjebalo sie: ', err)
-});
+// followers.count({}).exec().then(function(count) {
+//   //tutaj wszystko nakurwiasz
+//   console.log("Followers number is: " + count);
+// }).catch(function(err) {
+//   console.log('wyjebalo sie: ', err)
+// });
+
+var display = followers.length;
+console.log('followers length is ' + display);
