@@ -1,6 +1,6 @@
 {
   "name": "burmistrz",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Website of the candidate for the mayor of the municipality of Szczebrzeszyn - Jakub Cebrykow",
   "author": {
@@ -25,7 +25,6 @@
     "express-session": "^1.2.1",
     "express-validator": "^2.20.4",
     "method-override": "^2.3.5",
-    "mongodb": "^2.2.31",
     "mongoose": "4.4.8",
     "morgan": "^1.7.0",
     "nodemailer": "^2.3.0",
