@@ -32,7 +32,7 @@
       <img class="emblem responsive-img" src="images/szczebrzeszyn-emblem.png" alt="szczebrzeszyn-emblem">
       <a id="logo-container" href="/" class="brand-logo">Jakub Cebrykow</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#!">Poparło mnie już:<span class="badge indigo white-text">{{followers.length}}</span></a></li>
+        <li><a href="/followerspage">Poparło mnie już:<span class="badge indigo white-text">{{count}}</span></a></li>
         <li><a href="/">Główna</a></li>
         <li><a href="/contact">Kontakt</a></li>
         {{#if user.name}}
@@ -47,7 +47,7 @@
 <ul id="slide-out" class="side-nav right">
   <li>
     <div class="user-view">
-      <li><a href="#!">Poparło mnie już:<span class="badge indigo white-text"></span></a></li>
+      <li><a href="/followerspage">Poparło mnie już:<span class="badge indigo white-text">{{count}}</span></a></li>
       <li>
         <div class="divider"></div>
       </li>

@@ -84,7 +84,7 @@ passport.use(new FacebookStrategy({
       }, function(err, user) {
         if (user) {
           req.flash('error', {
-            msg: 'Adres ' + user.email + 'jest już powiązany z innym kontem.'
+            msg: 'Adres ' + user.email + ' jest już powiązany z innym kontem.'
           });
           done(err);
         } else {

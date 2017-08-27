@@ -1,0 +1,15 @@
+<div class="section followersPage">
+  <div class="container">
+    <ul class="collection with-header">
+      <li class="collection-header">
+        <h4 class="center light">Lista poparcia</h4></li>
+        {{#each followers.FirstName}}
+        <li class="collection-item">{{followers.FirstName}}</li>
+        <li class="collection-item">{{followers.LastName}}</li>
+        <li class="collection-item">{{followers.Place}}</li>
+        <li class="collection-item">{{followers.Email}}</li>
+        <li class="collection-item">{{followers.Message}}</li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

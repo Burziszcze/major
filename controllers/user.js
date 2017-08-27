@@ -27,13 +27,6 @@ exports.loginGet = function(req, res) {
   });
 };
 
-// GET FOLLOWERS PAGE AFTER LOGIN
-// exports.followersGet = function(req,res) {
-//   if (req.user) {
-//     return res.redirect('/followerspage');
-//   }
-// };
-
 /**
  * POST /login
  */
@@ -41,7 +34,9 @@ exports.loginPost = function(req, res, next) {
   req.assert('email', 'Email is not valid').isEmail();
   req.assert('email', 'Email cannot be blank').notEmpty();
   req.assert('password', 'Password cannot be blank').notEmpty();
-  req.sanitize('email').normalizeEmail({ remove_dots: false });
+  req.sanitize('email').normalizeEmail({
+    remove_dots: false
+  });
 
   var errors = req.validationErrors();
 
@@ -89,7 +84,9 @@ exports.signupPost = function(req, res, next) {
   req.assert('email', 'Email is not valid').isEmail();
   req.assert('email', 'Email cannot be blank').notEmpty();
   req.assert('password', 'Password must be at least 4 characters long').len(4);
-  req.sanitize('email').normalizeEmail({ remove_dots: false });
+  req.sanitize('email').normalizeEmail({
+    remove_dots: false
+  });
 
   var errors = req.validationErrors();
 
@@ -98,9 +95,13 @@ exports.signupPost = function(req, res, next) {
     return res.redirect('/signup');
   }
 
-  User.findOne({ email: req.body.email }, function(err, user) {
+  User.findOne({
+    email: req.body.email
+  }, function(err, user) {
     if (user) {
-      req.flash('error', { msg: 'Podany przez Ciebie adres E-mail jest aktualnie powiązany z innym kontem.' });
+      req.flash('error', {
+        msg: 'Podany przez Ciebie adres E-mail jest aktualnie powiązany z innym kontem.'
+      });
       return res.redirect('/signup');
     }
 
@@ -137,7 +138,9 @@ exports.accountPut = function(req, res, next) {
   } else {
     req.assert('email', 'Email is not valid').isEmail();
     req.assert('email', 'Email cannot be blank').notEmpty();
-    req.sanitize('email').normalizeEmail({ remove_dots: false });
+    req.sanitize('email').normalizeEmail({
+      remove_dots: false
+    });
   }
 
   var errors = req.validationErrors();
@@ -159,11 +162,17 @@ exports.accountPut = function(req, res, next) {
     }
     user.save(function(err) {
       if ('password' in req.body) {
-        req.flash('success', { msg: 'Twoje hasło zostało zmienione.' });
+        req.flash('success', {
+          msg: 'Twoje hasło zostało zmienione.'
+        });
       } else if (err && err.code === 11000) {
-        req.flash('error', { msg: 'Podany przez Ciebie adres email jest aktualnie powiązany z innym kontem.' });
+        req.flash('error', {
+          msg: 'Podany przez Ciebie adres email jest aktualnie powiązany z innym kontem.'
+        });
       } else {
-        req.flash('success', { msg: 'Twoj profil został zaktualizowany.' });
+        req.flash('success', {
+          msg: 'Twoj profil został zaktualizowany.'
+        });
       }
       res.redirect('/account');
     });
@@ -174,9 +183,13 @@ exports.accountPut = function(req, res, next) {
  * DELETE /account
  */
 exports.accountDelete = function(req, res, next) {
-  User.remove({ _id: req.user.id }, function(err) {
+  User.remove({
+    _id: req.user.id
+  }, function(err) {
     req.logout();
-    req.flash('info', { msg: 'Twoje konto zostało trwale usunięte!' });
+    req.flash('info', {
+      msg: 'Twoje konto zostało trwale usunięte!'
+    });
     res.redirect('/');
   });
 };
@@ -200,14 +213,18 @@ exports.unlink = function(req, res, next) {
         user.vk = undefined;
         break;
       case 'github':
-          user.github = undefined;
+        user.github = undefined;
         break;
       default:
-        req.flash('error', { msg: 'Invalid OAuth Provider' });
+        req.flash('error', {
+          msg: 'Invalid OAuth Provider'
+        });
         return res.redirect('/account');
     }
     user.save(function(err) {
-      req.flash('success', { msg: 'Twoje konto zostało odłączone.' });
+      req.flash('success', {
+        msg: 'Twoje konto zostało odłączone.'
+      });
       res.redirect('/account');
     });
   });
@@ -231,7 +248,9 @@ exports.forgotGet = function(req, res) {
 exports.forgotPost = function(req, res, next) {
   req.assert('email', 'Email jest niepoprawny!').isEmail();
   req.assert('email', 'Pole Email nie może być puste!').notEmpty();
-  req.sanitize('email').normalizeEmail({ remove_dots: false });
+  req.sanitize('email').normalizeEmail({
+    remove_dots: false
+  });
 
   var errors = req.validationErrors();
 
@@ -248,9 +267,13 @@ exports.forgotPost = function(req, res, next) {
       });
     },
     function(token, done) {
-      User.findOne({ email: req.body.email }, function(err, user) {
+      User.findOne({
+        email: req.body.email
+      }, function(err, user) {
         if (!user) {
-          req.flash('error', { msg: 'Ten adres Email ' + req.body.email + ' nie jest połączony z żadnym kontem.' });
+          req.flash('error', {
+            msg: 'Ten adres Email ' + req.body.email + ' nie jest połączony z żadnym kontem.'
+          });
           return res.redirect('/forgot');
         }
         user.passwordResetToken = token;
@@ -273,12 +296,14 @@ exports.forgotPost = function(req, res, next) {
         from: 'support@yourdomain.com',
         subject: '✔ Reset your password on Mega Boilerplate',
         text: 'You are receiving this email because you (or someone else) have requested the reset of the password for your account.\n\n' +
-        'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
-        'http://' + req.headers.host + '/reset/' + token + '\n\n' +
-        'If you did not request this, please ignore this email and your password will remain unchanged.\n'
+          'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
+          'http://' + req.headers.host + '/reset/' + token + '\n\n' +
+          'If you did not request this, please ignore this email and your password will remain unchanged.\n'
       };
       transporter.sendMail(mailOptions, function(err) {
-        req.flash('info', { msg: 'An email has been sent to ' + user.email + ' with further instructions.' });
+        req.flash('info', {
+          msg: 'An email has been sent to ' + user.email + ' with further instructions.'
+        });
         res.redirect('/forgot');
       });
     }
@@ -292,11 +317,15 @@ exports.resetGet = function(req, res) {
   if (req.isAuthenticated()) {
     return res.redirect('/');
   }
-  User.findOne({ passwordResetToken: req.params.token })
+  User.findOne({
+      passwordResetToken: req.params.token
+    })
     .where('passwordResetExpires').gt(Date.now())
     .exec(function(err, user) {
       if (!user) {
-        req.flash('error', { msg: 'Password reset token is invalid or has expired.' });
+        req.flash('error', {
+          msg: 'Password reset token is invalid or has expired.'
+        });
         return res.redirect('/forgot');
       }
       res.render('account/reset', {
@@ -321,11 +350,15 @@ exports.resetPost = function(req, res, next) {
 
   async.waterfall([
     function(done) {
-      User.findOne({ passwordResetToken: req.params.token })
+      User.findOne({
+          passwordResetToken: req.params.token
+        })
         .where('passwordResetExpires').gt(Date.now())
         .exec(function(err, user) {
           if (!user) {
-            req.flash('error', { msg: 'Password reset token is invalid or has expired.' });
+            req.flash('error', {
+              msg: 'Password reset token is invalid or has expired.'
+            });
             return res.redirect('back');
           }
           user.password = req.body.password;
@@ -351,10 +384,12 @@ exports.resetPost = function(req, res, next) {
         to: user.email,
         subject: 'Your Mega Boilerplate password has been changed',
         text: 'Hello,\n\n' +
-        'This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n'
+          'This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n'
       };
       transporter.sendMail(mailOptions, function(err) {
-        req.flash('success', { msg: 'Twoje hasło zostało zmienione.' });
+        req.flash('success', {
+          msg: 'Twoje hasło zostało zmienione.'
+        });
         res.redirect('/account');
       });
     }

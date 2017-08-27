@@ -21,6 +21,7 @@ var HomeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var voteController = require('./controllers/votes');
 var contactController = require('./controllers/contact');
+var followersController = require('./controllers/followers');
 
 // Passport OAuth strategies
 require('./config/passport');
@@ -106,9 +107,9 @@ app.get('/auth/google/callback', passport.authenticate('google', {
 // send followers votes to database
 app.post('/vote', voteController.followerscout);
 // Display number of followers in view
-app.get('/', voteController.displayFollowers);
+app.get('/', voteController.displayVotes);
 // Show followersPage after logged in
-// app.get('/followerspage', userController.getFollowers);
+app.get('/followerspage', followersController.followersGet);
 
 // Production error handler
 if (app.get('env') === 'production') {
