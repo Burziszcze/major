@@ -2,14 +2,12 @@
   <div class="container">
     <ul class="collection with-header">
       <li class="collection-header">
-        <h4 class="center light">Lista poparcia</h4></li>
-        {{#each followers.FirstName}}
-        <li class="collection-item">{{followers.FirstName}}</li>
-        <li class="collection-item">{{followers.LastName}}</li>
-        <li class="collection-item">{{followers.Place}}</li>
-        <li class="collection-item">{{followers.Email}}</li>
-        <li class="collection-item">{{followers.Message}}</li>
-      {{/each}}
+        <h4 class="center light">{{title}}</h4></li>
+      {{#if followers}}
+        {{#each followers}}
+          <li class="collection-item"><b>Imię:</b> {{FirstName}} <br> <b>Nazwisko:</b> {{LastName}} <br> <b>Email:</b> {{Email}} <br> <b>Miejscowość:</b> {{Place}} <br> <b>Wiadomość:</b> {{Message}}</li>
+        {{/each}}
+      {{/if}}
     </ul>
   </div>
 </div>

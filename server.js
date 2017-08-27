@@ -108,8 +108,9 @@ app.get('/auth/google/callback', passport.authenticate('google', {
 app.post('/vote', voteController.followerscout);
 // Display number of followers in view
 app.get('/', voteController.displayVotes);
-// Show followersPage after logged in
+// Show followersPage after authentication
 app.get('/followerspage', followersController.followersGet);
+
 
 // Production error handler
 if (app.get('env') === 'production') {
@@ -119,7 +120,7 @@ if (app.get('env') === 'production') {
   });
 }
 
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT || 3000, function() {
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 

@@ -8,13 +8,14 @@ exports.followersGet = function(req, res) {
   if (req.isAuthenticated()) {
     var query = followers.find({});
     // console.log(query);
-    query.exec(function(docs) {
+    query.exec(function(err,docs) {
+          if (err) {
+            throw Error;
+          }
       res.render('followerspage', {
-        // title: 'followers',
+        title: 'Lista poparcia',
         followers: docs
       });
-    }).catch(function(err) {
-      console.log('wyjebalo sie: ', err)
     });
   } else {
     res.redirect('/login');

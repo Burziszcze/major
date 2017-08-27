@@ -32,7 +32,7 @@ exports.displayVotes = function(req, res) {
   followers.count({}).exec().then(function(count) {
     //tutaj wszystko nakurwiasz
     res.render('/', {
-      count: docs
+      counter: count
     })
     console.log("Followers number is: " + count);
   }).catch(function(err) {
