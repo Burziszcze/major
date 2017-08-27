@@ -7,11 +7,10 @@ var followers = require('../models/followers');
 exports.followersGet = function(req, res) {
   if (req.isAuthenticated()) {
     var query = followers.find({});
-    // console.log(query);
-    query.exec(function(err,docs) {
-          if (err) {
-            throw Error;
-          }
+    query.exec(function(err, docs) {
+      if (err) {
+        throw Error;
+      }
       res.render('followerspage', {
         title: 'Lista poparcia',
         followers: docs

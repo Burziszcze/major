@@ -32,10 +32,18 @@
       <img class="emblem responsive-img" src="images/szczebrzeszyn-emblem.png" alt="szczebrzeszyn-emblem">
       <a id="logo-container" href="/" class="brand-logo">Jakub Cebrykow</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/followerspage">Poparło mnie już:<span class="badge indigo white-text">{{#foreach}} {{counter}}{{/foreach}}</span></a></li>
+        <li><a href="/followerspage">Poparło mnie już:<span class="badge indigo white-text">
+          {{#if counter}}
+          {{#each}}
+          {{counter}}
+          {{/each}}
+          {{/if}}
+        </span></a></li>
+
         <li><a href="/">Główna</a></li>
         <li><a href="/contact">Kontakt</a></li>
         {{#if user.name}}
+        <li><a href="/logout">Wyloguj</a></li>
         {{else}}
           <li><a href="/login">Zaloguj</a></li>
         {{/if}}
