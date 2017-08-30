@@ -22,15 +22,6 @@
     <input type="email" name="email" id="email" value="{{user.email}}">
     <label for="name">Name</label>
     <input type="text" name="name" id="name" value="{{user.name}}">
-    <label>Płeć</label>
-    <input type="radio" name="gender" id="male" value="male" {{#ifeq user.gender 'male'}}checked{{/ifeq}}>
-    <label for="male">mężczyzna</label>
-    <input type="radio" name="gender" id="female" value="female" {{#ifeq user.gender 'male'}}checked{{/ifeq}}>
-    <label for="female">kobieta</label>
-    <label for="location">Location</label>
-    <input type="text" name="location" id="location" value="{{user.location}}">
-    <label for="website">Website</label>
-    <input type="text" name="website" id="website" value="{{user.website}}">
     <label>Gravatar</label>
     <img src="{{user.gravatar}}" class="gravatar" width="100" height="100">
     <br>
@@ -50,16 +41,16 @@
 
   <h4 class="light">połączone konta</h4>
 
-{{#if user.facebook}}
-  <p><a href="/unlink/facebook" class="text-danger">Odłącz twoje konto Facebook</a></p>
-{{else}}
-  <p><a href="/auth/facebook">Podłącz swoje konto Facebook</a></p>
-{{/if}}
-{{#if user.google}}
-  <p><a href="/unlink/google" class="text-danger">Odłącz twoje konto Google</a></p>
-{{else}}
-  <p><a href="/auth/google">Podłącz swoje konto Google</a></p>
-{{/if}}
+  {{#if user.facebook}}
+    <p><a href="/unlink/facebook" class="text-danger">Odłącz twoje konto Facebook</a></p>
+  {{else}}
+    <p><a href="/auth/facebook">Podłącz swoje konto Facebook</a></p>
+  {{/if}}
+  {{#if user.google}}
+    <p><a href="/unlink/google" class="text-danger">Odłącz twoje konto Google</a></p>
+  {{else}}
+    <p><a href="/auth/google">Podłącz swoje konto Google</a></p>
+  {{/if}}
 
   <h4 class="removeaccount center light">Usuń konto</h4>
 
