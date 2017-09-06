@@ -28,29 +28,25 @@ exports.followerscout = function(req, res) {
 
 // count number of collection
 
-// exports.displayVotes = function(req, res)  {
-//
-// }
+exports.displayVotes = function(req, res) {
+  var votes = followers.length
+  console.log("votes length is: " + votes);
+  res.render('/', {
+    votes: docs
+  })
+}
+
+// followers.find().exec(function(err, results) {
+//   var count = results.length
+//   console.log("Followers number is: " + count);
+// });
+
+
+
 
 // followers.count({}).exec().then(function(count) {
 //   // tutaj wszystko nakurwiasz
-//   // res.render('home', {
-//   //   counter: count
-//   // })
 //   console.log("Followers number is: " + count);
 // }).catch(function(err) {
-//   console.log('wyjebalo sie: ', err)
+//   console.log('wyjebalo sie: ', err);
 // });
-
-exports.displayVotes = function(req, res) {
-  var votes = followers.find().count();
-  votes.exec(function(err, count) {
-    if (err) {
-      throw Error;
-    };
-    res.render('/', {
-      counter: count
-    })
-    console.log("Followers number is: " + count);
-  });
-}
