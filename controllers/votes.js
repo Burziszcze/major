@@ -25,28 +25,3 @@ exports.followerscout = function(req, res) {
   }
   res.redirect('/');
 }
-
-// count number of collection
-
-exports.displayVotes = function(req, res) {
-  var votes = followers.length
-  console.log("votes length is: " + votes);
-  res.render('/', {
-    votes: docs
-  })
-}
-
-// followers.find().exec(function(err, results) {
-//   var count = results.length
-//   console.log("Followers number is: " + count);
-// });
-
-
-
-
-// followers.count({}).exec().then(function(count) {
-//   // tutaj wszystko nakurwiasz
-//   console.log("Followers number is: " + count);
-// }).catch(function(err) {
-//   console.log('wyjebalo sie: ', err);
-// });
