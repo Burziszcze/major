@@ -43,14 +43,14 @@ exports.followerscout = function(req, res) {
 // });
 
 exports.displayVotes = function(req, res) {
-  var votes = followers.find().count();
-  votes.exec(function(err, count) {
-    if (err) {
-      throw Error;
-    };
-    res.render('/', {
-      counter: count
-    })
-    console.log("Followers number is: " + count);
-  });
+  // var votes = followers.find().count();
+  // votes.exec(function(err, count) {
+  //   if (err) {
+  //     throw Error;
+  //   };
+  //   res.render('/', {
+  //     counter: count
+  //   })
+  //   console.log("Followers number is: " + count);
+  // });
 }
