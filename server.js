@@ -22,6 +22,9 @@ var userController = require('./controllers/user');
 var voteController = require('./controllers/votes');
 var contactController = require('./controllers/contact');
 var followersController = require('./controllers/followers');
+// model require for handlebars helper
+var followers = require('./models/followers');
+
 
 // Passport OAuth strategies
 require('./config/passport');
@@ -46,6 +49,10 @@ var hbs = exphbs.create({
     },
     toJSON: function(object) {
       return JSON.stringify(object);
+    },
+    votes: function() {
+      var votes = followers.length;
+      return votes;
     }
   }
 });
@@ -106,8 +113,6 @@ app.get('/auth/google/callback', passport.authenticate('google', {
 }));
 // send followers votes to database
 app.post('/vote', voteController.followerscout);
-// Display number of followers in view
-app.get('/', voteController.displayVotes);
 // Show followersPage after authentication
 app.get('/followerspage', followersController.followersGet);
 

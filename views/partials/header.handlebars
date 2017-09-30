@@ -6,17 +6,13 @@
       <a id="logo-container" href="/" class="brand-logo">Jakub Cebrykow</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="/followerspage">Poparło mnie już:<span class="badge indigo white-text">
-          {{#if counter}}
-          {{#each}}
-          {{counter}}
-          {{/each}}
-          {{/if}}
+          {{votes}} osoby
         </span></a></li>
 
         <li><a href="/">Główna</a></li>
         <li><a href="/contact">Kontakt</a></li>
         {{#if user.name}}
-        <li><a href="/logout">Wyloguj</a></li>
+          <li><a href="/logout">Wyloguj</a></li>
         {{else}}
           <li><a href="/login">Zaloguj</a></li>
         {{/if}}
@@ -28,7 +24,7 @@
 <ul id="slide-out" class="side-nav right">
   <li>
     <div class="user-view">
-      <li><a href="/followerspage">Poparło mnie już:<span class="badge indigo white-text">{{counter}}</span></a></li>
+      <li><a href="/followerspage">Poparło mnie już:<span class="badge indigo white-text">{{votes}} osoby</span></a></li>
       <li>
         <div class="divider"></div>
       </li>
