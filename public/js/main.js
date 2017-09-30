@@ -20,6 +20,12 @@ $(document).ready(function() {
   $('input#input_text, textarea#textarea1').characterCounter();
   //scrollTop hide on document load
   $('.scrollTop').hide();
+  // scroll to contact
+  $("#clickToContact").click(function() {
+    $('html, body').animate({
+      scrollTop: $("#contact").offset().top
+    }, 2000);
+  });
   //scrollTop
   $('.scrollTop').click(function() {
     $('html, body').animate({
