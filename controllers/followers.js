@@ -12,7 +12,6 @@ exports.followersGet = function(req, res) {
         throw Error;
       }
       res.render('followerspage', {
-        title: 'Lista poparcia',
         followers: docs
       });
     });
