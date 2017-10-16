@@ -12,6 +12,7 @@ var dotenv = require('dotenv');
 var exphbs = require('express-handlebars');
 var mongoose = require('mongoose');
 var passport = require('passport');
+var i18n=require("i18n-express");
 
 // Load environment variables from .env file
 dotenv.load();
@@ -80,6 +81,11 @@ app.use(function(req, res, next) {
   next();
 });
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(i18n({
+  translationsPath: path.join(__dirname, 'i18n'), // <--- use here. Specify translations files path.
+  siteLangs: ["en"],
+  textsVarName: 'translation'
+}));
 
 app.get('/', HomeController.index);
 app.get('/contact', contactController.contactGet);
