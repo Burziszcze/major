@@ -15,48 +15,51 @@
     </div>
   {{/if}}
 
-  <h4 class="profile center light">Informacja o profilu użytkownika</h4>
+  <h4 class="profile center light">{{translation.ACCOUNT-INFO}}</h4>
 
   <form method="POST" action="/account?_method=PUT">
-    <label for="email">Email</label>
+    <label for="email">{{translation.EMAIL}}</label>
     <input type="email" name="email" id="email" value="{{user.email}}">
-    <label for="name">Name</label>
+    <label for="name">{{translation.NAME}}</label>
     <input type="text" name="name" id="name" value="{{user.name}}">
     <label>Gravatar</label>
     <img src="{{user.gravatar}}" class="gravatar" width="100" height="100">
     <br>
-    <button class="waves-effect waves-light btn indigo" type="submit">Zaktualizuj profil</button>
+    <button class="waves-effect waves-light btn indigo" type="submit">{{translation.UPDATE-PROFILE}}</button>
   </form>
-
-  <h4 class="changepassword center light">Zmień hasło</h4>
+  <br>
+  <hr>
+  <br>
+  <h4 class="changepassword center light">{{translation.CHANGE-PASS}}</h4>
 
   <form method="POST" action="/account?_method=PUT">
-    <label for="password">Nowe hasło</label>
+    <label for="password">{{translation.NEW-PASS}}</label>
     <input type="password" name="password" id="password">
-    <label for="confirm">Potwierdź hasło</label>
+    <label for="confirm">{{translation.CONFIRM-PASS}}</label>
     <input type="password" name="confirm" id="confirm">
     <br>
-    <button class="waves-effect waves-light btn red" type="submit">zmień hasło</button>
+    <button class="waves-effect waves-light btn red" type="submit">{{translation.CHANGE-PASS}}</button>
   </form>
-
-  <h4 class="light">połączone konta</h4>
+  <h4 class="light center">{{translation.LINKED-ACCOUNTS}}</h4>
 
   {{#if user.facebook}}
-    <p><a href="/unlink/facebook" class="text-danger">Odłącz twoje konto Facebook</a></p>
+    <p><a href="/unlink/facebook" class="text-danger">{{translation.UNLINK-FACEBOOK}}</a></p>
   {{else}}
-    <p><a href="/auth/facebook">Podłącz swoje konto Facebook</a></p>
+    <p><a href="/auth/facebook">{{translation.LINK-FACEBOOK}}</a></p>
   {{/if}}
   {{#if user.google}}
-    <p><a href="/unlink/google" class="text-danger">Odłącz twoje konto Google</a></p>
+    <p><a href="/unlink/google" class="text-danger">{{translation.UNLINK-GOOGLE}}</a></p>
   {{else}}
-    <p><a href="/auth/google">Podłącz swoje konto Google</a></p>
+    <p><a href="/auth/google">{{translation.LINK-GOOGLE}}</a></p>
   {{/if}}
-
-  <h4 class="removeaccount center light">Usuń konto</h4>
+  <br>
+  <hr>
+  <br>
+  <h4 class="removeaccount center light">{{translation.DELETE-ACCOUNT}}</h4>
 
   <form method="POST" class="center" action="/account?_method=DELETE">
-    <p class="center light">Możesz usunąć swoje konto, jednak miej na uwadze, że ta operacja jest nieodwracalna</p>
-    <button class="waves-effect waves-light btn red accent-4" type="submit">Usuń konto!</button>
+    <p class="center light">{{translation.DELETE-ACCOUNT-CAPTION}}</p>
+    <button class="waves-effect waves-light btn red accent-4" type="submit">{{translation.DELETE-ACCOUNT}}</button>
   </form>
   <br>
 </div>

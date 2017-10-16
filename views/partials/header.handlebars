@@ -5,26 +5,34 @@
       <img class="emblem responsive-img" src="images/szczebrzeszyn-emblem.png" alt="szczebrzeszyn-emblem">
       <a id="logo-container" href="/" class="brand-logo">Jakub Cebrykow</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/followerspage">Poparło mnie już:<span class="badge indigo white-text">
-          {{votes}} osoby
+        <li><a href="/followerspage">{{translation.FOLLOWERS}}<span class="badge indigo white-text">
+          {{votes}} {{translation.PERSONS}}
         </span></a></li>
 
-        <li><a href="/">Główna</a></li>
-        <li><a href="/contact">Kontakt</a></li>
+        <li><a href="/">{{translation.MAINSITE}}</a></li>
+        <li><a href="/contact">{{translation.CONTACT}}</a></li>
         {{#if user.name}}
-          <li><a href="/logout">Wyloguj</a></li>
+          <li><a href="/logout">{{translations.LOGOUT}}</a></li>
         {{else}}
-          <li><a href="/login">Zaloguj</a></li>
+          <li><a href="/login">{{translation.SIGNUP}}</a></li>
         {{/if}}
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="fa fa-language" aria-hidden="true"></i> {{translation.LANGUAGE}}</a></li>
       </ul>
     </div>
   </nav>
+  <!-- Dropdown Structure -->
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="/?clang=en">English</a></li>
+    <li class="divider"></li>
+    <li><a href="/?clang=pl">Polski</a></li>
+  </ul>
 </header>
 <!-- Side-Nav -->
 <ul id="slide-out" class="side-nav right">
   <li>
     <div class="user-view">
-      <li><a href="/followerspage">Poparło mnie już:<span class="badge indigo white-text">{{votes}} osoby</span></a></li>
+      <li><a href="/followerspage">{{translation.FOLLOWERS}}<span class="badge indigo white-text">{{votes}} {{translation.PERSONS}}</span></a></li>
       <li>
         <div class="divider"></div>
       </li>
@@ -36,7 +44,7 @@
           <a href="#!user"><img class="avatar responsive-img circle" src="{{user.gravatar}}"></a>
         {{/if}}
         {{#if user.name}}
-          <li><a href="#!name"><span class="black-text name">Zalogowany jako: {{user.name}}</span></a></li>
+          <li><a href="#!name"><span class="black-text name">{{translation.LOGGEDBY}} {{user.name}}</span></a></li>
         {{else}}
           <a href="#!email"><span class="black-text email">{{user.email}}</span></a>
         {{/if}}
@@ -44,15 +52,15 @@
         <li>
           <div class="divider"></div>
         </li>
-        <li><a href="/account"><i class="fa fa-user" aria-hidden="true"></i>Moje konto</a></li>
-        <li><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Wyloguj</a></li>
+        <li><a href="/account"><i class="fa fa-user" aria-hidden="true"></i>{{translation.ACCOUNT}}</a></li>
+        <li><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>{{translation.LOGOUT}}</a></li>
       {{else}}
-        <li><a href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i>Zaloguj</a></li>
-        <li><a href="/signup"><i class="fa fa-user-plus" aria-hidden="true"></i>Rejestracja</a></li>
+        <li><a href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i>{{translation.LOGIN}}</a></li>
+        <li><a href="/signup"><i class="fa fa-user-plus" aria-hidden="true"></i>{{translation.SIGNUP}}</a></li>
       {{/if}}
     </div>
   </li>
-  <li><a href="#!"><i class="fa fa-envelope-o" aria-hidden="true"></i>Kontakt</a></li>
+  <li><a href="#!"><i class="fa fa-envelope-o" aria-hidden="true"></i>{{translation.CONTACT}}</a></li>
   <li>
     <div class="divider"></div>
   </li>

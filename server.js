@@ -83,7 +83,7 @@ app.use(function(req, res, next) {
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(i18n({
   translationsPath: path.join(__dirname, 'i18n'), // <--- use here. Specify translations files path.
-  siteLangs: ["en"],
+  siteLangs: ["en", "pl"],
   textsVarName: 'translation'
 }));
 

@@ -13,21 +13,21 @@
         <form class="signupform z-depth-4 center" method="POST">
           <br>
           <i class="fa fa-user-plus signupicon" aria-hidden="true"></i>
-          <h4 class="header col s12 light">Utwórz nowe konto!</h4>
+          <h4 class="header col s12 light">{{translation.NEW-ACCOUNT}}</h4>
           <div class="row">
             <div class="input-field col s12">
               <input type="text" name="name" id="name" autofocus required="">
-              <label for="name">Imię</label>
+              <label for="name">{{translation.NAME}}</label>
             </div>
             <div class="input-field col s12">
               <input type="email" name="email" id="email" autofocus required="">
-              <label for="email">Email</label>
+              <label for="email">{{translation.EMAIL}}</label>
             </div>
             <div class="input-field col s12">
               <input type="password" name="password" id="password" required="">
-              <label for="password">Hasło</label>
+              <label for="password">{{translation.PASSWORD}}</label>
             </div>
-            <button class="waves-effect waves-light btn red" type="submit">Zarejestruj się</button>
+            <button class="waves-effect waves-light btn red" type="submit">{{translation.SIGNUP}}</button>
           </div>
           <br>
           <!-- </div> -->
@@ -35,13 +35,13 @@
         <br>
         <hr>
         <i class="fa fa-facebook-official" aria-hidden="true"></i>
-        <a href="/auth/facebook">Zarejestruj konto przez Facebook</a>
+        <a href="/auth/facebook">{{translation.REGISTER-BY-FACEBOOK}}</a>
         <br>
         <i class="fa fa-google" aria-hidden="true"></i>
-        <a href="/auth/google">Zarejestruj konto przez Google</a>
+        <a href="/auth/google">{{translation.REGISTER-BY-GOOGLE}}</a>
         <br>
 
-        <p>Posiadasz już konto? <a href="/login">Zaloguj się</a></p>
+        <p>{{translation.ALREADY-HAVE-ACCOUNT}} <a href="/login">{{translation.LOGIN}}</a></p>
       </div>
       <br>
     </div>

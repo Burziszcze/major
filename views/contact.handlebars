@@ -16,8 +16,8 @@
     {{/if}}
     <div class="contactformtext center">
       <i class="fa fa-envelope-o contactformicon" aria-hidden="true"></i>
-      <h4 class="header col s12 light">Formularz kontaktowy</h4>
-      <h5 class="header col s12 light">Skontaktuj się ze mną prywatnie</h5>
+      <h4 class="header col s12 light">{{translation.CONTACT-FORM}}</h4>
+      <h5 class="header col s12 light">{{translation.CONTACT-FORM-CAPTION}}</h5>
     </div>
     <div class="row">
       <div class="col s12 center">
@@ -25,22 +25,22 @@
           <div class="row">
             <div class="input-field col s12">
               <input id="name" type="text" class="validate" required="">
-              <label for="name">Imię</label>
+              <label for="name">{{translation.NAME}}</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
               <input id="email" type="email" class="validate" required="">
-              <label for="email">Email</label>
+              <label for="email">{{translation.EMAIL}}</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
               <input id="message" type="text" class="validate" required="">
-              <label for="message">Wiadomość</label>
+              <label for="message">{{translation.CONTACT-FORM-MESSAGE}}</label>
             </div>
           </div>
-          <button class="waves-effect waves-light btn red btn-large" type="submit"><i class="fa fa-paper-plane right" aria-hidden="true"></i>Wyślij</button>
+          <button class="waves-effect waves-light btn red btn-large" type="submit"><i class="fa fa-paper-plane right" aria-hidden="true"></i>{{translation.SEND}}</button>
         </form>
       </div>
     </div>

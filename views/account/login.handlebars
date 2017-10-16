@@ -7,47 +7,38 @@
         {{/each}}
       </div>
     {{/if}}
-    <!-- <form method="POST">
-  <label for="email">Email</label>
-  <input type="email" name="email" id="email" placeholder="Email" autofocus>
-  <label for="password">Password</label>
-  <input type="password" name="password" id="password" placeholder="Password">
-  <p><a href="/forgot">Forgot your password?</a></p>
-  <button class="waves-effect waves-light btn" type="submit">Zaloguj się</button>
-</form> -->
     <br>
     <div class="row">
       <div class="col s12 m6 offset-m3 center">
         <form class="loginform z-depth-4 center" method="POST">
           <br>
           <i class="fa fa-user-o loginformusericon" aria-hidden="true"></i>
-          <h4 class="header col s12 light">Zaloguj się!</h4>
+          <h4 class="header col s12 light">{{translation.LOGIN}}</h4>
           <div class="row">
             <div class="input-field col s12">
               <input type="email" name="email" id="email" autofocus required="">
-              <label for="email">Email</label>
+              <label for="email">{{translation.EMAIL}}</label>
             </div>
             <div class="input-field col s12">
               <input type="password" name="password" id="password" required="">
-              <label for="password">Hasło</label>
+              <label for="password">{{translation.PASSWORD}}</label>
             </div>
 
-            <p class="center"><a href="/forgot">Zapomniane hasło?</a></p>
-            <button class="waves-effect waves-light btn red" type="submit">Zaloguj się</button>
+            <p class="center"><a href="/forgot">{{translation.FORGOT-PASS}}</a></p>
+            <button class="waves-effect waves-light btn red" type="submit">{{translation.LOGIN}}</button>
           </div>
           <br>
-          <!-- </div> -->
         </form>
         <br>
         <hr>
         <br>
         <i class="fa fa-facebook-official" aria-hidden="true"></i>
-        <a href="/auth/facebook">zaloguj się przez Facebook</a>
+        <a href="/auth/facebook">{{translation.LOGIN-BY-FACEBOOK}}</a>
         <br>
         <i class="fa fa-google" aria-hidden="true"></i>
-        <a href="/auth/google">zaloguj się przez Google</a>
+        <a href="/auth/google">{{translation.LOGIN-BY-GOOGLE}}</a>
         <br>
-        <p>Nie posiadasz jeszcze konta? <a href="/signup">Zarejestruj się</a></p>
+        <p>{{translation.DONT-HAVE-ACCOUNT}} <a href="/signup">{{translation.SIGNUP}}</a></p>
       </div>
       <br>
     </div>

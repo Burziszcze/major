@@ -26,11 +26,11 @@
   <div class="container">
     <h1 class="header center">Jakub Cebrykow</h1>
     <div class="row center">
-      <h4 class="header col s12 light">Twoj kandydat na burmistrza</h4>
-      <h5 class="header col s12 light">gminy Szczebrzeszyn</h5>
+      <h4 class="header col s12 light">{{translation.CANDIDATE}}</h4>
+      <h5 class="header col s12 light">{{translation.MUNICIPALITY}}</h5>
     </div>
     <div class="row center">
-      <button id="clickToContact" class="btn btn-large waves-effect waves-light red">Wyraź poparcie!</button>
+      <button id="clickToContact" class="btn btn-large waves-effect waves-light red">{{translation.VOTE}}</button>
     </div>
   </div>
 </div>
@@ -40,7 +40,7 @@
     <div class="row">
       <div class="col s12 m6 right">
         <h3><i class="mdi-content-send brown-text"></i>...</h3>
-        <h4>Parę słów o mnie</h4>
+        <h4>{{translation.ABOUT}}</h4>
         <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra
           ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices
           erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
@@ -56,9 +56,9 @@
   <div class="section no-pad-bot">
     <div class="container">
       <br><br>
-      <h2 class="header center black-text text-lighten-2">Gmina Szczebrzeszyn</h2>
+      <h2 class="header center black-text text-lighten-2">{{translation.PARALLAX-HEADER}}</h2>
       <div class="row center">
-        <h5 class="header col s12 black-text light">Potrzebuje zmian, wyraź swoją opinię!</h5>
+        <h5 class="header col s12 black-text light">{{translation.PARALLAX-CAPTION}}</h5>
       </div>
       <br><br>
 
@@ -73,7 +73,7 @@
       <div class="col s12 m4">
         <div class="icon-block">
           <h2 class="center"><i class="fa fa-bolt" aria-hidden="true"></i></h2>
-          <h5 class="center">Zadbaj o swoją przyszłość!</h5>
+          <h5 class="center">{{translation.HOMEGRID-HEADER_1}}</h5>
           <p class="light">Lorem ipsum dolor sit amet, tota argumentum ne vel. Eu vero sadipscing delicatissimi sit, ei pro sale nobis, ullum offendit recusabo eu has. His et illum laudem mucius. Et falli interesset ius. Alii saepe laoreet ut eos, quas platonem id vel.
             Mei saepe partiendo ne.</p>
         </div>
@@ -81,7 +81,7 @@
       <div class="col s12 m4">
         <div class="icon-block">
           <h2 class="center"><i class="fa fa-line-chart" aria-hidden="true"></i></h2>
-          <h5 class="center">To miasto zasługuje na więcej!</h5>
+          <h5 class="center">{{translation.HOMEGRID-HEADER_2}}</h5>
 
           <p class="light">Et vim eius iisque dignissim. Persius albucius consulatu id eam, elitr nostro necessitatibus no est, nibh oblique delicata an quo. Vis ut summo legere constituam, eu mel percipit salutatus, aeterno dissentiunt in per. Fuisset imperdiet est ei.
             His id melius delicata, usu modo diceret electram no. Partem partiendo pro te, nisl alia admodum an eos.</p>
@@ -90,7 +90,7 @@
       <div class="col s12 m4">
         <div class="icon-block">
           <h2 class="center"><i class="fa fa-cog" aria-hidden="true"></i></h2>
-          <h5 class="center">Czas na zmiany!</h5>
+          <h5 class="center">{{translation.HOMEGRID-HEADER_3}}</h5>
           <p class="light">Te pericula explicari appellantur pro, vim in augue fierent dissentiunt. Ei nam sint mandamus pericula, vel et ponderum temporibus, possim labores nominati cu mel. Ei inermis honestatis vel, ex explicari tincidunt quo, quis constituto ut his.
             Mei accumsan senserit no, minim accommodare qui ne, id sea solum detracto.</p>
         </div>
@@ -102,38 +102,38 @@
 <div id="contact" class="section contact grey lighten-5">
   <div class="container">
     <div class="row center">
-      <h2>Poprzyj mnie!</h2>
-      <h4>wypełnij formularz i złóż deklaracje poparcia!</h4>
+      <h2>{{translation.SUPPORT-FORM-HEADER}}</h2>
+      <h4>{{translation.SUPPORT-FORM-CAPTION}}</h4>
     </div>
     <div class="row">
       <form class="col s12" action="/vote" method="post">
         <div class="row">
           <div class="input-field col s12">
             <input p id="firstname" type="text" class="validate" name="firstname" required="">
-            <label for="firstname">Imię</label>
+            <label for="firstname">{{translation.NAME}}</label>
           </div>
           <div class="input-field col s12">
             <input id="lastname" type="text" class="validate" name="lastname" required="">
-            <label for="lastname">Nazwisko</label>
+            <label for="lastname">{{translation.SURNAME}}</label>
           </div>
           <div class="input-field col s12">
             <input id="email" type="email" class="validate" name="email" required="">
-            <label for="email">Email</label>
+            <label for="email">{{translation.EMAIL}}</label>
           </div>
           <div class="input-field col s12">
             <input id="place" type="text" class="validate" name="place" required="">
-            <label for="place">Miejscowość</label>
+            <label for="place">{{translation.PLACE}}</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
             <textarea id="message" class="materialize-textarea" name="message" length="120" required=""></textarea>
-            <label for="message">Co byś chciał zmienić w naszej gminie?</label>
+            <label for="message">{{translation.SUPPORT-FORM-MESSAGE}}</label>
           </div>
         </div>
         <div class="row right">
           <div class="col s12">
-            <button class="btn waves-effect waves-light red" type="submit" name="action"><i class="fa fa-paper-plane right" aria-hidden="true"></i>Wyślij
+            <button class="btn waves-effect waves-light red" type="submit" name="action"><i class="fa fa-paper-plane right" aria-hidden="true"></i>{{translation.SEND}}
               </button>
           </div>
         </div>
