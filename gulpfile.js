@@ -24,7 +24,7 @@ gulp.task('scripts', function() {
 
 /* Sass task */
 gulp.task('sass', function() {
-  gulp.src('scss/style.scss')
+  gulp.src('sass/style.scss')
     .pipe(plumber())
     .pipe(sass({
       includePaths: ['scss'].concat(neat)
@@ -50,4 +50,3 @@ gulp.task('default', ['sass', 'browser-sync'], function() {
   /* Watch .html files, run the bs-reload task on change. */
   gulp.watch(['*.html'], ['bs-reload']);
 });
-
